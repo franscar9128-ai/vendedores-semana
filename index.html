@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Vendedores de la Semana</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      text-align: center;
+      padding: 40px;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+    h1 { color: #28a745; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>🎉 ¡Felicidades! 🎉</h1>
+    <p>Estos son los <strong>3 vendedores de la semana</strong>:</p>
+    <p id="lista"></p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const v1 = params.get("v1") || "Vendedor 1";
+    const v2 = params.get("v2") || "Vendedor 2";
+    const v3 = params.get("v3") || "Vendedor 3";
+
+    document.getElementById("lista").innerHTML = `
+      🥇 ${v1}<br>
+      🥈 ${v2}<br>
+      🥉 ${v3}
+    `;
+  </script>
+
+</body>
+</html>
